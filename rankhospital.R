@@ -1,11 +1,10 @@
 
-
 rankhospital <- function(state, outcome, num){
     data = read.csv("outcome-of-care-measures.csv", na.strings = "Not Available", stringsAsFactors = FALSE)
     
     # Check if state is valid
     if(!any(is.element(unique(data[["State"]]), state))){
-        print("invalid state")
+        return("invalid state")
     }
     
     # Check if outcome is valid
@@ -16,7 +15,7 @@ rankhospital <- function(state, outcome, num){
     }else if (outcome == "pneumonia"){
         out = 23
     }else{
-        print("Invalid outcome")
+        ("Invalid outcome")
     }
     # subset initial data 
     my_data <- data[c(2, 7, out)]
@@ -37,7 +36,5 @@ rankhospital <- function(state, outcome, num){
     }else{num = num}
     
     new_data[num, 1]
-    
-    
-    
+      
 }
