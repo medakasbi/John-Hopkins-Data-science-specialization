@@ -23,6 +23,6 @@ best <- function(state, outcome){
     t[state]
     best_Hs = my_data$hospital[which(my_data[[outcome]] == t[state] & my_data$state == state)]
     sort(best_Hs)[1]
-    #my_data
+    
     
 }
